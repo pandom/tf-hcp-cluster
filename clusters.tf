@@ -30,5 +30,5 @@ resource "hcp_consul_cluster" "consul" {
 resource "hcp_vault_cluster" "vault" {
   cluster_id = "hcp-tf-vault-cluster"
   hvn_id     = hcp_hvn.vault_hvn.hvn_id
-  tier = "standard"
+  tier = "standard_small"
 }
