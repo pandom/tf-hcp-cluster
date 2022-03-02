@@ -1,5 +1,3 @@
-
-// Pin the version
 terraform {
   required_providers {
     hcp = {
