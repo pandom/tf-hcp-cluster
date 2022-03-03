@@ -14,3 +14,10 @@ variable "hcp_secret_id" {
     type = string
     default = ""
 }
+
+variable "root_policy" {
+    description = "root role"
+    type = string
+    default = "hcp-root"
+  
+}
