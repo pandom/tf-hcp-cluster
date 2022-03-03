@@ -1,6 +1,6 @@
 # Token
 resource "vault_token" "burkey" {
-  policies = [var.root_policy]
+  policies = ["hcp-root"]
 
   renewable = true
   ttl = "2190h"
