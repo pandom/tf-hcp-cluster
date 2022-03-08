@@ -9,10 +9,9 @@ variable "hcp_client_id" {
     default = ""
 }
 
-variable "hcp_secret_id" {
+variable "hcp_client_secret" {
     description = "secret"
     type = string
-    default = ""
 }
 
 variable "root_policy" {
