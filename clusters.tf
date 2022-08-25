@@ -39,5 +39,5 @@ resource "hcp_vault_cluster" "vault" {
 }
 
 resource "hcp_vault_cluster_admin_token" "token" {
-  cluster_id = hcp_vault_cluster.vault.id
+  cluster_id = hcp_vault_cluster.vault.cluster_id
 }
