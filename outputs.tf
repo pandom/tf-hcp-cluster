@@ -1,4 +1,5 @@
 output "vault_token" {
+  sensitive = true
   value = hcp_vault_cluster_admin_token.token.token
 }
 
