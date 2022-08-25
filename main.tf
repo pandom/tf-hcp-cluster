@@ -1,4 +1,13 @@
 terraform {
+  # cloud {
+  #   #used for local state configuration/change if needed
+  #   organization = "burkey"
+  #   hostname = "app.terraform.io" # Optional; defaults to app.terraform.io
+
+  #   workspaces {
+  #     name = "tf-hcp-cluster"
+  #   }
+  # }
   required_providers {
     hcp = {
       source  = "hashicorp/hcp"
