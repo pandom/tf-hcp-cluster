@@ -2,11 +2,7 @@ terraform {
   required_providers {
     hcp = {
       source  = "hashicorp/hcp"
-      version = "0.22.0"
-    }
-    vault = {
-      source = "hashicorp/vault"
-      version = "3.3.1"
+      version = "0.42.0"
     }
   }
 }
@@ -20,8 +16,4 @@ provider "hcp" {
 // Use the cloud provider AWS to provision resources that will be connected to HCP
 provider "aws" {
   region = var.region
-}
-
-provider "vault" {
-  
 }
