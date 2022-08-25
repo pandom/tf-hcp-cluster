@@ -27,9 +27,17 @@ resource "hcp_consul_cluster" "consul" {
 }
 ##commented out due to not supporting vault-plus sku.
 // Create a Vault cluster in the same region and cloud provider as the HVN
-# resource "hcp_vault_cluster" "vault" {
-#   cluster_id = "vault-plus"
-#   hvn_id     = hcp_hvn.vault_hvn.hvn_id
-#   tier = "plus_small"
-#   public_endpoint = true
-# }
+resource "hcp_vault_cluster" "vault" {
+  cluster_id = "vault-plus"
+  hvn_id     = hcp_hvn.vault_hvn.hvn_id
+  tier = "plus_small"
+  public_endpoint = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "hcp_vault_cluster_admin_token" "token" {
+  cluster_id = hcp_vault_cluster.vault.id
+}

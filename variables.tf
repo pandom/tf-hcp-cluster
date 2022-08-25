@@ -3,10 +3,12 @@ variable "region" {
     default = "ap-southeast-2"  
 }
 
+
+
 variable "hcp_client_id" {
     description = "hcp-client-id"
     type = string
-    default = ""
+    default = "client-burkey"
 }
 
 variable "hcp_client_secret" {
@@ -21,3 +23,6 @@ variable "root_policy" {
     default = "hcp-root"
   
 }
+
+
+
