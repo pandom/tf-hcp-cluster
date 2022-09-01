@@ -39,13 +39,13 @@ resource "hcp_vault_cluster" "vault" {
   metrics_config {
     grafana_user = var.grafana_user
     grafana_endpoint = var.grafana_endpoint
-    grafana_password = var.grafana_api_keys
+    grafana_password = var.grafana_api_key
   }
 
   audit_log_config {
     grafana_user = var.grafana_user
     grafana_endpoint = var.grafana_endpoint
-    grafana_password = var.grafana_api_keys
+    grafana_password = var.grafana_api_key
   }
 }
 
