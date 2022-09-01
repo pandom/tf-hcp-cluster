@@ -24,7 +24,7 @@ variable "root_policy" {
   
 }
 
-variable "grafana_api_keys" {
+variable "grafana_api_key" {
     description = "grafana API key"
     type = string
   
