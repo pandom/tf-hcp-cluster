@@ -24,5 +24,20 @@ variable "root_policy" {
   
 }
 
+variable "grafana_api_keys" {
+    description = "grafana API key"
+    type = string
+  
+}
+
+variable "grafana_endpoint" {
+    description = "Ingest URL"
+    type = string
+}
+
+variable "grafana_user" {
+    description = "User defined"
+    type = string
+}
 
 

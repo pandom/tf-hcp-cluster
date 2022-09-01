@@ -36,6 +36,17 @@ resource "hcp_vault_cluster" "vault" {
   lifecycle {
     prevent_destroy = true
   }
+  metrics_config {
+    grafana_user = var.grafana_user
+    grafana_endpoint = var.grafana_endpoint
+    grafana_password = var.grafana_api_keys
+  }
+
+  audit_log_config {
+    grafana_user = var.grafana_user
+    grafana_endpoint = var.grafana_endpoint
+    grafana_password = var.grafana_api_keys
+  }
 }
 
 resource "hcp_vault_cluster_admin_token" "token" {
