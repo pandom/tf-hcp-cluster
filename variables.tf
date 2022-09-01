@@ -40,4 +40,19 @@ variable "grafana_user" {
     type = string
 }
 
+variable "grafana_log_api_key" {
+    description = "grafana API key"
+    type = string
+  
+}
+
+variable "grafana_log_endpoint" {
+    description = "Ingest URL"
+    type = string
+}
+
+variable "grafana_log_user" {
+    description = "User defined"
+    type = string
+}
 

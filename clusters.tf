@@ -43,9 +43,9 @@ resource "hcp_vault_cluster" "vault" {
   }
 
   audit_log_config {
-    grafana_user = var.grafana_user
-    grafana_endpoint = var.grafana_endpoint
-    grafana_password = var.grafana_api_key
+    grafana_user = var.grafana_log_user
+    grafana_endpoint = var.grafana_log_endpoint
+    grafana_password = var.grafana_log_api_key
   }
 }
 
