@@ -24,6 +24,10 @@ resource "hcp_consul_cluster" "consul" {
   hvn_id     = hcp_hvn.vault_hvn.hvn_id
   cluster_id = "hcp-tf-consul-cluster"
   tier       = "plus"
+
+  lifecycle {
+    ignore_changes = [consul_version, min_consul_version]
+  }
 }
 ##commented out due to not supporting vault-plus sku.
 // Create a Vault cluster in the same region and cloud provider as the HVN
