@@ -2,6 +2,10 @@ variable "region" {
     description = "vault region"
     default = "ap-southeast-2"  
 }
+variable "region" {
+    description = "azure beta vault region"
+    default = "westus2"  
+}
 
 
 

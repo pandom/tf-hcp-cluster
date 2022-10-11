@@ -56,3 +56,27 @@ resource "hcp_vault_cluster" "vault" {
 resource "hcp_vault_cluster_admin_token" "token" {
   cluster_id = hcp_vault_cluster.vault.cluster_id
 }
+
+### Azure Cluster
+
+resource "hcp_hvn" "vault_hvn_az" {
+  hvn_id         = "hcp-tf-vault-hvn_az"
+  cloud_provider = "azure"
+  region         = var.region_azure
+  #cidr_block     = "172.25.16.0/20"
+}
+
+resource "hcp_vault_cluster" "vault_az" {
+  cluster_id = "vault-az"
+  hvn_id     = hcp_hvn.vault_hvn.hvn_id
+  tier = "dev"
+  public_endpoint = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
+  }
+
+resource "hcp_vault_cluster_admin_token" "token_az" {
+  cluster_id = hcp_vault_cluster.vault_az.cluster_id
+}
