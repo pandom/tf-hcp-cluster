@@ -60,7 +60,7 @@ resource "hcp_vault_cluster_admin_token" "token" {
 ### Azure Cluster
 
 resource "hcp_hvn" "vault_hvn_az" {
-  hvn_id         = "hcp-tf-vault-hvn_az"
+  hvn_id         = "hcp-tf-vault-hvn-az"
   cloud_provider = "azure"
   region         = var.region_azure
   #cidr_block     = "172.25.16.0/20"
