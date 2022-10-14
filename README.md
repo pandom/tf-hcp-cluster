@@ -15,8 +15,19 @@ It will also configure to [forward metrics and telemetry](https://developer.hash
 flowchart TD
 u[Vault Requestor]-->in
 u-->inaz
+u-->inpr
+inpr-->awshvnpr
+awshvnpr-->|Vault Read|hcpvawspr
+hcpvawspr-->|Vault Write|hcpvaws
 in-->awshvn
 subgraph HCP
+subgraph awseu[AWS - eu-west-1]
+inpr[Public FQDN]
+subgraph vaultpr[vault]
+hcpvawspr[Vault Plus]
+awshvnpr[AWS HVN-1]
+end
+end
 subgraph aws[AWS - ap-southeast-2]
 in[Public FQDN]
 subgraph vault
