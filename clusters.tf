@@ -97,4 +97,19 @@ resource "hcp_vault_cluster" "vault_pr" {
   primary_link    = hcp_vault_cluster.vault.self_link
   # paths_filter    = ["do-not-replicate-namespace", "replicate-namespace/do-not-replicate-secrets"]
   public_endpoint = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
+  metrics_config {
+    grafana_user = var.grafana_user
+    grafana_endpoint = var.grafana_endpoint
+    grafana_password = var.grafana_api_key
+  }
+
+  audit_log_config {
+    grafana_user = var.grafana_log_user
+    grafana_endpoint = var.grafana_log_endpoint
+    grafana_password = var.grafana_log_api_key
+  }
 }
