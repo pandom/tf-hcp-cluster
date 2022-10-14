@@ -84,7 +84,7 @@ resource "hcp_vault_cluster_admin_token" "token_az" {
 ## PR Cluster, Singapore
 
 resource "hcp_hvn" "vault_pr_hvn" {
-  hvn_id         = var.vault_pr_hvn
+  hvn_id         = "hcp-tf-vault-pr-hvn"
   cloud_provider = "aws"
   region         = var.region_pr
   cidr_block     = "172.25.32.0/20"
