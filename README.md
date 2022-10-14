@@ -17,8 +17,9 @@ u[Vault Requestor]-->in
 u-->inaz
 u-->inpr
 inpr-->awshvnpr
-awshvnpr-->|Vault Read|hcpvawspr
-hcpvawspr-->|Vault Write|hcpvaws
+awshvnpr-->|Vault Reads|hcpvawspr
+hcpvawspr--->|Vault Writes|hcpvaws
+hcpvaws-.->|Replicate|hcpvawspr
 in-->awshvn
 subgraph HCP
 subgraph awseu[AWS - eu-west-1]
@@ -51,7 +52,7 @@ subgraph g[Already Configured]
 gcloud[Grafana Cloud]
 end
 
-hcpvaws-->awshvn
+awshvn-->hcpvaws
 awshvn <--->|VPC Peering|awshvn2
 hcpvaz-->azhvn
 hcpvaws -.->|metrics + audit logs| g
