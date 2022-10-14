@@ -80,3 +80,21 @@ resource "hcp_vault_cluster" "vault_az" {
 resource "hcp_vault_cluster_admin_token" "token_az" {
   cluster_id = hcp_vault_cluster.vault_az.cluster_id
 }
+
+## PR Cluster, Singapore
+
+resource "hcp_hvn" "vault_pr_hvn" {
+  hvn_id         = var.vault_pr_hvn
+  cloud_provider = "aws"
+  region         = var.region_pr
+  cidr_block     = "172.25.32.0/20"
+}
+
+resource "hcp_vault_cluster" "vault_pr" {
+  hvn_id          = hcp_hvn.vault_pr_hvn.hvn_id
+  cluster_id      = "vault-pr"
+  tier = "plus_small"
+  primary_link    = hcp_vault_cluster.vault.self_link
+  # paths_filter    = ["do-not-replicate-namespace", "replicate-namespace/do-not-replicate-secrets"]
+  public_endpoint = true
+}
