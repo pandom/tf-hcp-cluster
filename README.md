@@ -13,9 +13,9 @@ It will also configure to [forward metrics and telemetry](https://developer.hash
 
 ```mermaid
 flowchart TD
-u[Vault Requestor]-->in
-u-->inaz
-u-->inpr
+u[Vault Requestor]-->|request|in
+u-->|request|inaz
+u-->|request|inpr
 inpr-->awshvnpr
 awshvnpr-->|Vault Reads|hcpvawspr
 hcpvawspr--->|Vault Writes|hcpvaws
