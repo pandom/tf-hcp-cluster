@@ -66,3 +66,10 @@ variable "grafana_log_user" {
     type = string
 }
 
+variable "boundary_bootstrap_password" {
+    description = "bootstrap password. Only works once"
+    type = string
+    default = "Hashi123!"
+  
+}
+
